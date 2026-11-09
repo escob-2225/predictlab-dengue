@@ -1,0 +1,60 @@
+{
+  "source_excel": "MASTER_CHART_F1000Research.xlsx",
+  "rows_original": 303,
+  "rows_used": 302,
+  "rows_excluded": 1,
+  "features": [
+    "BP_AT_ADMISSION",
+    "PCV",
+    "PLATELET_COUNT",
+    "HIGHEST_WBC",
+    "ALT"
+  ],
+  "target": "GROUPS_DENGUE_FEVER_OR_COMPLICATED_DENGUE",
+  "class_mapping": {
+    "0": "Dengue no complicado",
+    "1": "Dengue complicado"
+  },
+  "split": "75% entrenamiento / 25% prueba, estratificado, random_state=42",
+  "bp_mapping": "Código original 2 = hipotensión y 1 = sin hipotensión, inferido al coincidir las frecuencias del Excel con la Tabla 1 del artículo.",
+  "metrics": {
+    "Regresión logística": {
+      "accuracy": 0.8157894736842105,
+      "precision": 0.5357142857142857,
+      "recall": 0.9375,
+      "f1": 0.6818181818181818,
+      "roc_auc": 0.921875,
+      "test_records": 76
+    },
+    "Red neuronal artificial": {
+      "accuracy": 0.868421052631579,
+      "precision": 0.6666666666666666,
+      "recall": 0.75,
+      "f1": 0.7058823529411765,
+      "roc_auc": 0.8671875,
+      "test_records": 76
+    }
+  },
+  "confusion_matrices": {
+    "Regresión logística": [
+      [
+        47,
+        13
+      ],
+      [
+        1,
+        15
+      ]
+    ],
+    "Red neuronal artificial": [
+      [
+        54,
+        6
+      ],
+      [
+        4,
+        12
+      ]
+    ]
+  }
+}
